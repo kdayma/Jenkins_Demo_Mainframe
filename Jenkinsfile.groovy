@@ -18,21 +18,12 @@ pipeline {
 			stage('Jira') {
 				steps {
 					script {
-							comment_issues ()
+							successComment = " Successfully scanned"
+							echo "We are successful in JIRA with success comment"
+							jiraAddComment site: 'ITOM', idOrKey: RID-5, input: successComment, auditLog: false
+							echo "Commnet published"
 					}
 				}
 			}
         }
-}
-
-void comment_issues () {
-    def issue_pattern = "RID-\\d+"
-    currentBuild.changeSets.each {changeSet ->
-        changeSet.each { commit ->
-            String msg = commit.getMsg ()
-            msg.findAll (issue_pattern).each {
-                id -> jiraAddComment idOrKey: id, comment: 'Hi there!'
-            }
-        }
-    }
 }
