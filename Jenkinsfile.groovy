@@ -20,7 +20,7 @@ pipeline {
 					script {
 							successComment = " Successfully scanned"
 							echo "We are successful in JIRA with success comment"
-							jiraAddComment site: 'https://jira-stage.rocketsoftware.com/', idOrKey: 'RID-5', input: successComment, auditLog: false
+							jiraAddComment idOrKey: 'RID-5', input: successComment, auditLog: false
 							echo "Commnet published"
 					}
 				}
