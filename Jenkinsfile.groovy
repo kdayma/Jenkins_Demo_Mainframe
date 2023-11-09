@@ -15,7 +15,7 @@ pipeline {
                         }
                     }
                }
-			stage('Jira) {
+			stage('Jira') {
 				steps {
 					script {
 							comment_issues ()
