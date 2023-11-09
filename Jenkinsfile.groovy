@@ -18,7 +18,8 @@ pipeline {
 			stage('Jira') {
 				steps {
 					script {
-							successComment = " Successfully scanned"
+							successComment = [body:" Successfully scanned"]
+							
 							echo "We are successful in JIRA with success comment"
 							jiraAddComment site: 'Rocket Innovation Day', idOrKey: 'RID-5', input: successComment, auditLog: false
 							echo "Commnet published"
