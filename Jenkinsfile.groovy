@@ -30,8 +30,8 @@ pipeline {
 				steps {
 					script {
 						echo "Integrating Slack Message"
-						slackSend color: "good", message: "Message from Jenkins Pipeline"
-						slackSend(channel: "Keshav Dayma", message: "Here is the primary message")
+						slackSend color: "good", message: "Message from Jenkins Pipeline got completed..."
+						slackSend(channel: "Keshav Dayma", message: "Message from Jenkins Pipeline got completed...")
 						echo "Slack Message send"
 					}
 				}
