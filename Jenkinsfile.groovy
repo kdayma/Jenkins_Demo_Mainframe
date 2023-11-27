@@ -1,22 +1,14 @@
 pipeline {
         agent any
         stages {
-			stage('Build') {
-				stage('Script-01') {
+            stage('Build') {
                 steps {
                     script {
                             build job: 'Script-01'
+							build job: 'Script-02'
                         }
                     }
-               }   
-            stage('Script-02') {
-                steps {
-                    script {
-                            build job: 'Script-02'
-                        }
-                    }
-               }
-			}
+            }
 			stage('Jira') {
 				steps {
 					script {
